@@ -1,4 +1,4 @@
-interface IModel<T> {
+export interface IModel<T> {
   create(obj: T):Promise<T>,
   read():Promise<T[]>,
   readOne(_id: string):Promise<T | null>,
@@ -6,4 +6,4 @@ interface IModel<T> {
   delete(_id: string):Promise<T | null>,
 }
 
-export default IModel;
+// export default IModel;
