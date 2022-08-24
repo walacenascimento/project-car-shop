@@ -2,10 +2,17 @@
 
 
 // import * as sinon from 'sinon';
-// import chai from 'chai';
-// const { expect } = chai;
+// // import chai from 'chai';
+// import { expect } from 'chai';
+// import carsModel from '../../../models/CarsModel';
+// import carsService from '../../../services/carsService';
+// import { carMock, carMockWithId } from '../../mock/carMock'
+// import { ZodError } from 'zod';
+// import { ErrorTypes } from '../../../errors/catalog'
 
-// describe('Sua descrição', () => {
+// describe('Test Car Service', () => {
+//     const carsModel = new CarsModel();
+//     const carsService = new CarsService(carsModel);
 
 //   before(async () => {
 //     sinon
