@@ -3,11 +3,11 @@
 import * as sinon from 'sinon';
 // import chai from 'chai';
 import { expect } from 'chai';
-import CarsModel from '../../../models/CarsModel';
-import CarsService from '../../../services/CarsService';
-import { carMock, carMockWithId } from '../../mock/carMock'
 import { ZodError } from 'zod';
 import { ErrorTypes } from '../../../errors/catalog'
+import { carMock, carMockWithId } from '../../mock/carMock'
+import CarsModel from '../../../models/CarsModel';
+import CarsService from '../../../services/CarsService';
 
 describe('Test Car Service', () => {
     const carsModel = new CarsModel();
