@@ -27,7 +27,7 @@ export default class CarsController {
 
   // Retronar um carro, filtrando pelo Id Req. 9
   public async readOne(req: Request, res: Response<ICar | null>) {
-    const car = await this._service.readOne(req.params._id);
+    const car = await this._service.readOne(req.params.id);
     return res.status(200).json(car);
   }
 

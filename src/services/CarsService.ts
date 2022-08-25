@@ -27,16 +27,16 @@ export default class CarService implements IService<ICar> {
 
   // Retronar um carro, filtrando pelo ID Req. 9
   public async readOne(_id:string):Promise<ICar> {
-    const car = await this._car.readOne(_id);
-    if (!car) throw new Error(ErrorTypes.EntityNotFound);
-
     // if (_id.length < 24) {
     //   const idLength = JSON.stringify({
     //     code: 400,
     //     error: 'Id must have 24 hexadecimal characters',
     //   });
     //   throw new Error(idLength);
-    // } 
+    // }
+    
+    const car = await this._car.readOne(_id);
+    if (!car) throw new Error(ErrorTypes.EntityNotFound);
     return car;
   }
 

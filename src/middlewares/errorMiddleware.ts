@@ -11,6 +11,7 @@ const errorHandler: ErrorRequestHandler = (
   if (err instanceof ZodError) {
     return res.status(400).json({ message: err.issues });
   }
+  // console.log(err);
   const messageAsErrorType = err.message as keyof typeof ErrorTypes;
 
   const mappedError = errorCatalog[messageAsErrorType];
