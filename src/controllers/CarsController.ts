@@ -18,4 +18,10 @@ export default class CarsController {
     }
     return res.status(201).json(newCar);
   }
+
+  // Retornar todos os carros Req. 8
+  public async read(_req: Request, res: Response<ICar[]>) {
+    const car = await this._service.read();
+    return res.status(200).json(car);
+  }
 }
