@@ -10,12 +10,14 @@ export default class MotorcycleService implements IService<IMotorcycle> {
     this._motorcycle = model;
   }
 
+  // Req 19
   public async create(obj: IMotorcycle): Promise<IMotorcycle> {
     const motorcycle = motorcycleZodSchema.safeParse(obj);
     if (!motorcycle.success) throw motorcycle.error;
     return this._motorcycle.create(obj);
   }
 
+  // Req 20
   public async read():Promise<IMotorcycle[]> {
     const motorcycle = await this._motorcycle.read();
 
@@ -23,6 +25,7 @@ export default class MotorcycleService implements IService<IMotorcycle> {
     return (motorcycle);
   }
 
+  // Req 21
   public async readOne(_id: string):Promise<IMotorcycle> {
     const motorcycle = await this._motorcycle.readOne(_id);
 
@@ -30,6 +33,7 @@ export default class MotorcycleService implements IService<IMotorcycle> {
     return motorcycle;
   }
 
+  // Req 22
   public async update(_id: string, obj:IMotorcycle):
   Promise<IMotorcycle | null> {
     const motorcycleUpdate = motorcycleZodSchema.safeParse(obj);
@@ -39,8 +43,9 @@ export default class MotorcycleService implements IService<IMotorcycle> {
     return this._motorcycle.update(_id, obj);
   }
 
+  // Req 23
   public async delete(_id: string):Promise<IMotorcycle | null> {
-    await this._motorcycle.readOne(_id);
+    await this.readOne(_id);
     return this._motorcycle.delete(_id);
   }
 }
